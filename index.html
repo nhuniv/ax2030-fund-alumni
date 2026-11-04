@@ -1,0 +1,745 @@
+<!doctype html>
+<!-- 농협대학교 AX2030 기금모금 모바일 페이지 v1: 표지 → 영상 → 질문 → 인재상 → 기부금 사용처 → 참여 방법 -->
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#030B1F">
+<title>AX2030 대전환 혁신사업 기금모금</title>
+<meta name="description" content="「AX2030 대전환 혁신사업」 추진 기금모금(10억원). 농협의 미래 인재를 농협대학교가 책임지겠습니다.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="「AX2030 대전환 혁신사업」 추진 기금모금">
+<meta property="og:description" content="농협의 미래 인재를 농협대학교가 책임지겠습니다. 범농협 차원의 참여를 부탁드립니다.">
+<meta property="og:image" content="https://nhuniv.github.io/ax2030-fund-alumni/assets/og.jpg">
+<meta property="og:url" content="https://nhuniv.github.io/ax2030-fund-alumni/">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="icon" href="assets/emblem.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&display=swap" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" media="print" onload="this.media='all'">
+<style>
+  :root {
+    --bg0: #030B1F;
+    --bg1: #06132E;
+    --bg2: #0B2257;
+    --ink: #EEF4FF;
+    --ink-2: #B4C4E6;
+    --ink-3: #8095C2;
+    --line: rgba(255,255,255,.12);
+    --nh: #0A4BB0;
+    --sky: #5CC8FF;
+    --blue: #2F7BFF;
+    --gold: #F2C46D;
+    --c-infra: #5CC8FF;
+    --c-edu: #7BE0B0;
+    --c-lab: #F2C46D;
+    --c-admin: #A88BFF;
+    --grad: linear-gradient(90deg, #5CC8FF 0%, #2F7BFF 55%, #7C6CFF 100%);
+    --gold-grad: linear-gradient(90deg, #F7D58A, #E9A93B, #F7D58A);
+    --en: "Unbounded", "Pretendard Variable", sans-serif;
+    --ease: cubic-bezier(.2,.75,.2,1);
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; background: var(--bg0); scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg0); color: var(--ink);
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    font-size: 17px; line-height: 1.7; word-break: keep-all; overflow-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { position: relative; max-width: 480px; margin: 0 auto; background: var(--bg1); overflow-x: hidden; box-shadow: 0 0 80px rgba(40,110,255,.18); }
+  img, video, svg, canvas { display: block; max-width: 100%; }
+  a { color: inherit; }
+  button { font: inherit; color: inherit; }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  /* ---------- 공통 ---------- */
+  .page { position: relative; padding: 56px 20px; }
+  h2 { margin: 0 0 18px; font-size: clamp(25px, 7vw, 29px); line-height: 1.35; font-weight: 800; letter-spacing: -.025em; color: #fff; }
+  .pno { display: inline-grid; place-items: center; height: 26px; padding: 0 10px; margin-right: 10px; border-radius: 999px; background: var(--grad); color: #04102A; font: 700 12px/1 var(--en); vertical-align: 4px; }
+  .lead { margin: -6px 0 22px; font-size: 17px; line-height: 1.6; color: var(--ink-2); }
+  .lead b { color: #fff; }
+  .hl { color: var(--sky); }
+  .glass { background: linear-gradient(160deg, rgba(255,255,255,.08), rgba(255,255,255,.02)); border: 1px solid var(--line); border-radius: 22px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+
+  /* 글자 단위 등장 */
+  .w { display: inline-block; white-space: nowrap; }
+  .js [data-split] .c { display: inline-block; opacity: 0; transform: translateY(.55em) rotate(4deg); filter: blur(6px);
+    transition: opacity .8s var(--ease), transform .9s var(--ease), filter .8s var(--ease); transition-delay: calc(var(--d, 0ms) + var(--i) * 30ms); }
+  .js .in [data-split] .c, .js [data-split].in .c { opacity: 1; transform: none; filter: none; }
+  /* 블록 등장 */
+  .js .rv { opacity: 0; transform: translateY(30px); transition: opacity 1s var(--ease), transform 1.1s var(--ease); transition-delay: var(--d, 0ms); }
+  .js .rv.in { opacity: 1; transform: none; }
+
+  /* ---------- 인트로 ---------- */
+  .intro { position: fixed; inset: 0; z-index: 100; background: #01050F; display: grid; place-items: center; animation: introOut .8s ease 2.05s forwards; cursor: pointer; }
+  .intro .seed { width: 8px; height: 8px; border-radius: 50%; background: #FFE3A0; box-shadow: 0 0 22px 8px rgba(242,196,109,.6); animation: seed 2.2s var(--ease) forwards; }
+  .intro .ring { position: absolute; width: 10px; height: 10px; border-radius: 50%; border: 1px solid rgba(92,200,255,.85); animation: ring 1.8s ease-out .5s forwards; opacity: 0; }
+  .intro .ring.r2 { border-color: rgba(124,108,255,.7); animation-delay: .75s; }
+  .intro p { position: absolute; top: calc(50% + 36px); margin: 0; font: 400 10px var(--en); letter-spacing: .55em; color: rgba(255,255,255,.75); animation: introText 1.7s ease .35s both; white-space: nowrap; }
+  @keyframes seed { 0% { transform: scale(0); } 25% { transform: scale(1); } 70% { transform: scale(1.5); } 100% { transform: scale(60); opacity: 0; } }
+  @keyframes ring { 0% { transform: scale(1); opacity: .9; } 100% { transform: scale(46); opacity: 0; } }
+  @keyframes introText { 0% { opacity: 0; letter-spacing: 1.2em; } 50% { opacity: 1; } 100% { opacity: 0; letter-spacing: .55em; } }
+  @keyframes introOut { to { opacity: 0; visibility: hidden; } }
+
+  /* ---------- 1. 표지 ---------- */
+  .hero { position: relative; min-height: 82svh; display: flex; flex-direction: column; overflow: hidden;
+    background: radial-gradient(120% 60% at 50% 0%, #10368A 0%, #0A1F5A 40%, var(--bg1) 80%); }
+  .hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 140px; background: linear-gradient(transparent, var(--bg1)); pointer-events: none; z-index: 2; }
+  .hero-top { position: relative; z-index: 3; display: flex; align-items: center; gap: 8px; padding: max(18px, env(safe-area-inset-top)) 20px 0; font-size: 14px; font-weight: 700; color: #DCE6FF; }
+  .hero-top img { width: 28px; height: 28px; }
+  .hero-top span { font: 400 10px var(--en); letter-spacing: .3em; color: var(--ink-3); margin-left: 4px; }
+  .hero-main { position: relative; z-index: 3; flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 30px 22px 70px; text-align: center; }
+  .kicker { margin: 0 0 16px; font: 400 11px var(--en); letter-spacing: .42em; margin-right: -.42em; color: var(--sky); }
+  .h1 { margin: 0; font-size: clamp(27px, 7.8vw, 34px); font-weight: 800; line-height: 1.3; letter-spacing: -.03em; color: #fff; }
+  .h1 .ax { color: var(--gold); text-shadow: 0 0 18px rgba(242,196,109,.45); }
+  .goal { position: relative; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; margin: 26px auto 0; width: fit-content; min-width: 220px; padding: 10px 20px; border-radius: 16px; }
+  .goal small { display: inline-block; padding: 1px 8px; border: 1px solid rgba(242,196,109,.55); border-radius: 6px; font-size: 12.5px; font-weight: 700; color: var(--gold); }
+  .goal-num { display: flex; align-items: baseline; gap: 2px; margin: 0; color: var(--ink); }
+  .goal-num b { font: 700 22px/1 var(--en); letter-spacing: -.02em; color: var(--gold); font-variant-numeric: tabular-nums; }
+  .goal-num span { font-size: 16px; font-weight: 700; }
+  #goalProgress { flex-basis: 100%; }
+  .goal-bar { margin-top: 16px; height: 10px; border-radius: 999px; background: rgba(255,255,255,.1); overflow: hidden; }
+  .goal-bar i { display: block; height: 100%; width: 0; border-radius: inherit; background: var(--gold-grad); transition: width 1.8s var(--ease) .3s; }
+  .goal-meta { display: flex; justify-content: space-between; margin-top: 8px; font-size: 13.5px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+  .goal-meta b { color: #fff; }
+  .slogan { margin: 24px 0 0; font-size: clamp(17px, 4.8vw, 19px); font-weight: 600; line-height: 1.55; color: var(--ink-2); --d: 900ms; }
+  .slogan strong { color: #fff; }
+  .js .goal { opacity: 0; transform: translateY(16px); transition: opacity 1s var(--ease) 1.2s, transform 1s var(--ease) 1.2s; }
+  .js .hero.in .goal { opacity: 1; transform: none; }
+  /* 아래로 넘기기 안내: 첫 화면 아래쪽에 떠 있다가 조금이라도 내리면 사라짐 */
+  .scroll-cue { position: fixed; z-index: 38; left: 50%; bottom: calc(22px + env(safe-area-inset-bottom)); transform: translate(-50%, 14px); display: flex; align-items: center; gap: 8px; padding: 10px 14px 10px 18px; border-radius: 999px; white-space: nowrap;
+    background: rgba(6,19,46,.78); border: 1px solid rgba(242,196,109,.6); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    color: #fff; font-size: 15px; font-weight: 800; text-decoration: none; opacity: 0; pointer-events: none;
+    transition: opacity .5s var(--ease), transform .5s var(--ease); animation: cueGlow 2.2s ease-out infinite; }
+  .scroll-cue.show { opacity: 1; transform: translate(-50%, 0); pointer-events: auto; }
+  .scroll-cue .chev { display: grid; width: 22px; height: 22px; place-items: center; border-radius: 50%; background: var(--gold-grad); color: #2A1A00; animation: cueBounce 1.2s ease-in-out infinite; }
+  .scroll-cue .chev svg { width: 14px; height: 14px; }
+  @keyframes cueBounce { 0%, 100% { transform: translateY(-2px); } 50% { transform: translateY(4px); } }
+  @keyframes cueGlow { 0% { box-shadow: 0 10px 28px rgba(0,0,0,.45), 0 0 0 0 rgba(242,196,109,.5); } 100% { box-shadow: 0 10px 28px rgba(0,0,0,.45), 0 0 0 14px rgba(242,196,109,0); } }
+
+  /* ---------- 2. 영상 ---------- */
+  .film { padding-top: 24px; }
+  .player { position: relative; border-radius: 18px; overflow: hidden; background: #000; aspect-ratio: 16 / 9; box-shadow: 0 24px 60px rgba(0,0,0,.55), 0 0 0 1px var(--line); }
+  .player iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .cover { position: absolute; inset: 0; display: grid; place-items: center; background: linear-gradient(180deg, rgba(3,11,31,.1), rgba(3,11,31,.55)), url(assets/use-edu.jpg) center / cover; transition: opacity .5s ease, visibility .5s; }
+  .player.playing .cover { opacity: 0; visibility: hidden; }
+  .play { all: unset; position: relative; width: 108px; height: 108px; cursor: pointer; display: grid; place-items: center; }
+  .play svg.ring { position: absolute; inset: 0; width: 100%; height: 100%; animation: spin 14s linear infinite; }
+  .play svg.ring text { font: 600 8.6px var(--en); letter-spacing: .14em; fill: rgba(255,255,255,.92); }
+  .play .tri { width: 58px; height: 58px; border-radius: 50%; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.6); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); display: grid; place-items: center; transition: transform .3s var(--ease), background .3s; }
+  .play .tri::before { content: ""; margin-left: 5px; border-style: solid; border-width: 10px 0 10px 16px; border-color: transparent transparent transparent #fff; }
+  .play:hover .tri, .play:focus-visible .tri { transform: scale(1.08); background: rgba(92,200,255,.35); }
+  .play:focus-visible { outline: 3px solid var(--sky); outline-offset: 4px; border-radius: 50%; }
+  .play::after { content: ""; position: absolute; inset: 22px; border-radius: 50%; border: 1px solid rgba(92,200,255,.75); animation: ping 2.4s ease-out infinite; }
+  @keyframes ping { 0% { transform: scale(.9); opacity: .9; } 100% { transform: scale(1.7); opacity: 0; } }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .dur { position: absolute; right: 12px; bottom: 10px; font: 600 11px var(--en); letter-spacing: .12em; color: #fff; background: rgba(0,0,0,.45); padding: 5px 9px; border-radius: 8px; }
+  .player.playing .dur { display: none; }
+
+  /* ---------- 3. 질문 ---------- */
+  .ask-q { background: radial-gradient(100% 60% at 100% 10%, rgba(47,123,255,.22), transparent 60%), var(--bg1); }
+  .qs { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+  .q { display: grid; grid-template-columns: 46px 1fr; align-items: center; gap: 12px; padding: 13px 14px; }
+  .q .ic { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; background: rgba(92,200,255,.12); color: var(--sky); border: 1px solid rgba(92,200,255,.3); }
+  .q .ic svg { width: 24px; height: 24px; }
+  .q p { margin: 0; font-size: 16.5px; font-weight: 600; line-height: 1.45; color: var(--ink-2); }
+  .q p b { color: #fff; font-weight: 800; }
+  .js .qs .q { opacity: 0; transform: translateX(18px); transition: opacity .7s var(--ease), transform .7s var(--ease); transition-delay: calc(var(--n) * 110ms); }
+  .js .qs.in .q { opacity: 1; transform: none; }
+  .answer { margin-top: 22px; padding: 22px 18px; border-radius: 22px; text-align: center; background: linear-gradient(150deg, #0D3C98, #0A2A70); border: 1px solid rgba(92,200,255,.35); box-shadow: 0 20px 50px rgba(10,60,180,.35); }
+  .answer small { display: block; font: 400 10px var(--en); letter-spacing: .4em; margin-right: -.4em; color: var(--sky); margin-bottom: 10px; }
+  .answer p { margin: 0; font-size: clamp(18px, 5.2vw, 21px); font-weight: 800; line-height: 1.5; color: #fff; letter-spacing: -.02em; }
+  .answer p em { font-style: normal; color: var(--gold); }
+
+  /* ---------- 4. 인재상 ---------- */
+  .steps { position: relative; list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .steps::before { content: ""; position: absolute; left: 31px; top: 30px; bottom: 30px; width: 2px; background: rgba(255,255,255,.1); }
+  .steps::after { content: ""; position: absolute; left: 31px; top: 30px; width: 2px; height: calc(100% - 60px); background: var(--grad); transform-origin: top; transform: scaleY(0); transition: transform 1.6s var(--ease) .2s; }
+  .steps.in::after { transform: none; }
+  .st { position: relative; z-index: 1; display: grid; grid-template-columns: 64px 1fr; align-items: center; gap: 14px; }
+  .st .ic { width: 64px; height: 64px; border-radius: 20px; display: grid; place-items: center; background: var(--bg2); border: 1px solid rgba(92,200,255,.4); color: #fff; box-shadow: 0 0 0 6px var(--bg1); }
+  .st .ic svg { width: 30px; height: 30px; }
+  .st:last-child .ic { background: linear-gradient(140deg, #F7D58A, #E9A93B); border-color: transparent; color: #2A1A00; }
+  .st b { display: block; font: 600 10px var(--en); letter-spacing: .25em; color: var(--sky); }
+  .st strong { display: block; font-size: 19px; font-weight: 800; line-height: 1.35; color: #fff; }
+  .st span { font-size: 15px; color: var(--ink-2); }
+  .js .steps .st { opacity: 0; transform: translateY(14px); transition: opacity .7s var(--ease), transform .7s var(--ease); transition-delay: calc(.2s + var(--n) * 260ms); }
+  .js .steps.in .st { opacity: 1; transform: none; }
+
+  /* ---------- 5. 기부금 사용처 ---------- */
+  .use { background: linear-gradient(180deg, var(--bg1), #071A42 50%, var(--bg1)); }
+  .alloc { padding: 18px 16px 16px; margin-bottom: 18px; }
+  .alloc-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; font-size: 14px; color: var(--ink-2); }
+  .alloc-head b { font: 800 22px var(--en); color: #fff; letter-spacing: -.02em; }
+  .alloc-head b small { font: 800 15px "Pretendard Variable", Pretendard, sans-serif; margin-left: 2px; }
+  .stack { display: flex; gap: 3px; height: 16px; border-radius: 999px; overflow: hidden; }
+  .stack i { flex: 0 0 0; background: var(--c); transition: flex-basis 1.4s var(--ease); transition-delay: calc(.2s + var(--n) * 150ms); }
+  .alloc.in .stack i { flex-basis: calc(var(--p) - 3px); }
+  .legend { list-style: none; margin: 12px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 10px; font-size: 14px; color: var(--ink-2); }
+  .legend li { display: flex; align-items: center; gap: 7px; }
+  .legend li::before { content: ""; width: 10px; height: 10px; border-radius: 3px; background: var(--c); flex: none; }
+  .legend b { color: #fff; margin-left: auto; font-variant-numeric: tabular-nums; }
+  .cards { display: grid; gap: 14px; }
+  .card { border-radius: 20px; overflow: hidden; background: rgba(255,255,255,.04); border: 1px solid var(--line); }
+  .card figure { margin: 0; position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #0A1838; }
+  .card figure img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.08); transition: transform 1.6s var(--ease); }
+  .card.in figure img { transform: none; }
+  .card .amt { position: absolute; left: 12px; top: 12px; padding: 5px 11px; border-radius: 10px; font-size: 14px; font-weight: 800; color: #04102A; background: var(--c); box-shadow: 0 6px 16px rgba(0,0,0,.35); }
+  .card-body { padding: 14px 16px 16px; border-top: 3px solid var(--c); }
+  .card-body small { font-size: 13.5px; font-weight: 800; color: var(--c); }
+  .card-body small i { font: 600 12px var(--en); font-style: normal; margin-right: 6px; }
+  .card-body h3 { margin: 2px 0 2px; font-size: 19px; font-weight: 800; line-height: 1.4; color: #fff; }
+  .card-body p { margin: 0; font-size: 15.5px; color: var(--ink-2); line-height: 1.5; }
+
+  /* ---------- 6. 참여 방법 ---------- */
+  .give { text-align: center; padding-bottom: 40px; background: radial-gradient(90% 45% at 50% 100%, rgba(242,196,109,.16), transparent 70%), var(--bg1); }
+  .acct { padding: 20px 16px 16px; text-align: center; }
+  .acct small { display: block; font-size: 14px; font-weight: 700; color: var(--ink-2); }
+  .acct .bank { display: inline-flex; align-items: center; gap: 6px; margin-top: 4px; font-size: 15px; font-weight: 800; color: #fff; }
+  .acct .bank i { width: 9px; height: 9px; border-radius: 50%; background: var(--gold); }
+  .acct .num { display: block; margin: 6px 0 2px; font: 800 clamp(22px, 6.6vw, 27px)/1.2 var(--en); letter-spacing: -.01em; color: #fff; font-variant-numeric: tabular-nums; }
+  .acct .holder { font-size: 15px; color: var(--ink-2); }
+  .acct .holder b { color: #fff; }
+  .copy { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 50px; margin-top: 14px; border-radius: 14px; border: 1px solid rgba(242,196,109,.6); background: rgba(242,196,109,.1); color: var(--gold); font-size: 16px; font-weight: 800; cursor: pointer; }
+  .copy svg { width: 18px; height: 18px; }
+  .or { display: flex; align-items: center; gap: 12px; margin: 18px 0 4px; font-size: 13px; color: var(--ink-3); }
+  .or::before, .or::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  .cta { position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 60px; margin-top: 12px; border-radius: 18px; text-decoration: none; font-size: 19px; font-weight: 800; color: #2A1A00; background: var(--gold-grad); background-size: 200% 100%; animation: flow 4s linear infinite; box-shadow: 0 14px 34px rgba(233,169,59,.35); }
+  .cta::after { content: ""; position: absolute; top: 0; bottom: 0; width: 40%; left: -60%; background: linear-gradient(105deg, transparent, rgba(255,255,255,.6), transparent); animation: sweep 3.2s ease-in-out infinite; }
+  @keyframes flow { to { background-position: 200% 0; } }
+  @keyframes sweep { 0%, 40% { left: -60%; } 100% { left: 130%; } }
+  .cta-note { margin: 8px 0 0; font-size: 14px; color: var(--ink-3); }
+  .qr { display: flex; align-items: center; gap: 14px; margin-top: 16px; padding: 12px; text-align: left; text-decoration: none; }
+  .qr img { width: 92px; height: 92px; border-radius: 10px; background: #fff; flex: none; }
+  .qr:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; }
+  .qr p { margin: 0; font-size: 14.5px; line-height: 1.5; color: var(--ink-2); }
+  .qr p b { display: block; font-size: 16px; color: #fff; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
+  .btn { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; border-radius: 14px; border: 1px solid var(--line); background: rgba(255,255,255,.06); text-decoration: none; font-size: 16px; font-weight: 700; cursor: pointer; }
+  .btn svg { width: 19px; height: 19px; }
+  .closing { margin: 30px 0 0; padding-top: 24px; border-top: 1px solid var(--line); font-size: clamp(18px, 5.2vw, 21px); font-weight: 800; line-height: 1.5; color: var(--gold); letter-spacing: -.02em; }
+  .contact { margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: var(--ink-2); }
+  .contact a { font-weight: 800; color: #fff; text-underline-offset: 4px; }
+  .sign { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 18px 0 0; font-size: 16px; font-weight: 800; color: #fff; }
+  .sign img { width: 30px; height: 30px; }
+  .copy:focus-visible, .cta:focus-visible, .btn:focus-visible, .contact a:focus-visible, .scroll-cue:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; }
+
+  /* ---------- 고정 요소 ---------- */
+  .progress { position: fixed; top: 0; left: max(0px, calc(50% - 240px)); width: min(100%, 480px); height: 3px; z-index: 40; background: var(--grad); transform: scaleX(0); transform-origin: left; }
+  /* 배경음악 켜기/끄기 */
+  .music { position: fixed; z-index: 41; top: max(12px, env(safe-area-inset-top)); right: max(12px, calc(50% - 240px + 12px)); display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 13px; border-radius: 999px; border: 1px solid rgba(255,255,255,.3); background: rgba(6,19,46,.72); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); color: #fff; font: 600 10.5px var(--en); letter-spacing: .14em; cursor: pointer; transition: border-color .3s; }
+  .music.on { border-color: rgba(242,196,109,.75); }
+  .eq { display: flex; align-items: flex-end; gap: 2px; height: 14px; }
+  .eq i { width: 2.5px; height: 4px; border-radius: 2px; background: var(--gold); }
+  .music.on .eq i { animation: eq 1s ease-in-out infinite; }
+  .music.on .eq i:nth-child(2) { animation-delay: -.3s; } .music.on .eq i:nth-child(3) { animation-delay: -.6s; } .music.on .eq i:nth-child(4) { animation-delay: -.15s; }
+  @keyframes eq { 0%, 100% { height: 4px; } 50% { height: 14px; } }
+  .music:focus-visible { outline: 3px solid var(--sky); outline-offset: 2px; }
+  .tip { position: fixed; z-index: 41; top: calc(max(12px, env(safe-area-inset-top)) + 46px); right: max(12px, calc(50% - 240px + 12px)); max-width: 250px; padding: 9px 13px; border-radius: 12px; background: rgba(255,255,255,.95); color: #06132E; font-size: 13.5px; font-weight: 700; line-height: 1.4; box-shadow: 0 10px 26px rgba(0,0,0,.4); opacity: 0; transform: translateY(-6px); transition: opacity .4s, transform .4s var(--ease); pointer-events: none; }
+  .tip::before { content: ""; position: absolute; top: -6px; right: 26px; border: 6px solid transparent; border-top: 0; border-bottom-color: rgba(255,255,255,.95); }
+  .tip.show { opacity: 1; transform: none; }
+  .fab { position: fixed; z-index: 39; right: max(10px, calc(50% - 240px + 10px)); bottom: calc(12px + env(safe-area-inset-bottom)); display: grid; gap: 8px; opacity: 0; transform: translateX(24px); transition: opacity .5s var(--ease), transform .5s var(--ease); pointer-events: none; }
+  .fab.show { opacity: 1; transform: none; pointer-events: auto; }
+  .fab.show.away { opacity: 0; transform: translateX(24px); pointer-events: none; }
+  .fab .fab-btn { all: unset; box-sizing: border-box; position: relative; width: 58px; height: 58px; border-radius: 18px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; cursor: pointer; font-size: 11px; font-weight: 800; transition: transform .2s; }
+  .fab .fab-btn:active { transform: scale(.94); }
+  .fab .fab-btn svg { width: 20px; height: 20px; }
+  .fab .fab-give { background: var(--gold-grad); background-size: 200% 100%; color: #2A1A00; box-shadow: 0 12px 28px rgba(233,169,59,.4); }
+  .fab .fab-give::after { content: ""; position: absolute; inset: 0; border-radius: 18px; border: 2px solid rgba(242,196,109,.8); animation: fabPing 2.6s ease-out infinite; }
+  @keyframes fabPing { 0% { transform: scale(1); opacity: .85; } 100% { transform: scale(1.32); opacity: 0; } }
+  .fab .fab-share { background: rgba(6,19,46,.78); color: #fff; border: 1px solid rgba(255,255,255,.32); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 10px 24px rgba(0,0,0,.35); }
+  .fab .fab-btn:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+  /* 공유 창 */
+  .sheet { position: fixed; inset: 0; z-index: 70; }
+  .sheet-bg { position: absolute; inset: 0; background: rgba(1,5,15,.62); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); opacity: 0; transition: opacity .35s ease; }
+  .sheet.show .sheet-bg { opacity: 1; }
+  .sheet-panel { position: absolute; left: 50%; bottom: 0; width: 100%; max-width: 480px; transform: translate(-50%, 100%); transition: transform .45s var(--ease); background: linear-gradient(180deg, #0D2150, #06132E); border-radius: 26px 26px 0 0; border: 1px solid var(--line); border-bottom: 0; padding: 12px 20px calc(26px + env(safe-area-inset-bottom)); }
+  .sheet.show .sheet-panel { transform: translate(-50%, 0); }
+  .sheet-grip { width: 42px; height: 4px; border-radius: 4px; background: rgba(255,255,255,.25); margin: 0 auto 14px; }
+  .sheet-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+  .sheet-head h3 { margin: 0; font-size: 19px; font-weight: 800; }
+  .sheet-x { all: unset; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; cursor: pointer; background: rgba(255,255,255,.08); font-size: 24px; line-height: 1; }
+  .sheet-x:focus-visible { outline: 3px solid var(--sky); outline-offset: 2px; }
+  .sheet-card { display: flex; gap: 12px; align-items: center; padding: 10px; border-radius: 16px; background: rgba(255,255,255,.05); border: 1px solid var(--line); margin-bottom: 22px; }
+  .sheet-card img { width: 88px; height: 46px; object-fit: cover; border-radius: 9px; flex: none; }
+  .sheet-card b { display: block; font-size: 15px; line-height: 1.4; }
+  .sheet-card span { font-size: 12.5px; color: var(--ink-3); word-break: break-all; }
+  .share-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px 6px; }
+  .share-grid .sb { all: unset; display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer; font-size: 13.5px; font-weight: 700; color: var(--ink); text-align: center; }
+  .share-grid .sb[hidden] { display: none; }
+  .share-grid .ic { width: 58px; height: 58px; border-radius: 19px; display: grid; place-items: center; background: var(--bgc); color: var(--fgc, #fff); box-shadow: 0 8px 18px rgba(0,0,0,.3); transition: transform .2s; }
+  .share-grid .ic svg { width: 27px; height: 27px; }
+  .share-grid .sb:active .ic { transform: scale(.9); }
+  .share-grid .sb:focus-visible .ic { outline: 3px solid var(--sky); outline-offset: 3px; }
+  .toast { position: fixed; z-index: 80; left: 50%; bottom: 96px; transform: translateX(-50%); width: max-content; max-width: calc(min(100vw, 480px) - 40px); text-align: center; line-height: 1.45; padding: 12px 18px; border-radius: 14px; background: rgba(255,255,255,.95); color: #06132E; font-size: 15px; font-weight: 700; box-shadow: 0 12px 30px rgba(0,0,0,.4); opacity: 0; pointer-events: none; transition: opacity .3s; }
+  .toast.show { opacity: 1; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; transition-delay: 0ms !important; }
+  }
+</style>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<div class="intro" id="intro" aria-hidden="true"><span class="seed"></span><span class="ring"></span><span class="ring r2"></span><p>AX2030 · TOGETHER</p></div>
+
+<div class="wrap">
+
+  <!-- 1. 표지 -->
+  <header class="hero" id="hero">
+    <canvas id="net" aria-hidden="true"></canvas>
+    <div class="hero-top"><img src="assets/emblem.png" alt="" width="28" height="28">농협대학교<span>FUNDRAISING</span></div>
+    <div class="hero-main">
+      <p class="kicker" data-split>AX2030 TRANSFORMATION</p>
+      <h1 class="h1" data-split>「<span class="ax">AX2030</span> 대전환 혁신사업」<br>추진 기금모금</h1>
+      <div class="goal glass" id="goal">
+        <small>모금목표</small>
+        <p class="goal-num" aria-label="모금 목표 10억 원"><b id="goalNum" aria-hidden="true">10</b><span aria-hidden="true">억원</span></p>
+        <div id="goalProgress" hidden>
+          <div class="goal-bar"><i id="goalBar"></i></div>
+          <div class="goal-meta"><span>현재 <b id="goalRaised"></b></span><span id="goalPct"></span></div>
+        </div>
+      </div>
+      <p class="slogan" data-split>농협의 미래 인재를<br><strong>농협대학교가 책임지겠습니다.</strong></p>
+    </div>
+  </header>
+
+  <!-- 2. 영상 -->
+  <section class="page film" id="film" aria-labelledby="t-film">
+    <h2 id="t-film"><i class="pno">01</i>AX2030 이야기</h2>
+    <div class="player rv" id="player" style="--d:120ms">
+      <div class="cover">
+        <button class="play" id="playBtn" type="button" aria-label="AX2030 기부 영상 재생, 1분 8초">
+          <svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="circ" d="M60,60 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"/></defs><text><textPath href="#circ" textLength="312" lengthAdjust="spacing">PLAY · AX2030 · NONGHYUP UNIVERSITY · </textPath></text></svg>
+          <span class="tri"></span>
+        </button>
+        <span class="dur">01:08</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 질문 -->
+  <section class="page ask-q" id="why" aria-labelledby="t-why">
+    <h2 id="t-why" class="rv"><i class="pno">02</i>우리에게 던지는 질문</h2>
+    <p class="lead rv" style="--d:100ms">AI 대전환의 시대에서 우리는<br><b>스스로에게 질문해야 합니다.</b></p>
+    <ol class="qs" id="qs">
+      <li class="q glass" style="--n:0"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/><path d="M22 9v6"/></svg></span><p>농협대학교는 과연 <b>이 변화를 준비</b>하고 있는가?</p></li>
+      <li class="q glass" style="--n:1"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="3.5"/><path d="M5 21v-1a7 7 0 0 1 14 0v1"/></svg></span><p>학생들은 <b>AI를 배우고 활용</b>하고 있는가?</p></li>
+      <li class="q glass" style="--n:2"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="13" height="10" rx="1.5"/><path d="M12 7l3 3 4-4"/><circle cx="5" cy="8" r="2.5"/><path d="M2 20v-3a3 3 0 0 1 6 0v3M8 14l3-2"/></svg></span><p>교수들은 <b>AI에 따른 변화를 교육</b>하고 있는가?</p></li>
+      <li class="q glass" style="--n:3"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="16" height="11" rx="1.5"/><path d="M7 19h6M10 15v4"/><circle cx="18.5" cy="16.5" r="3"/><path d="M18.5 12.5v1M18.5 19.5v1M22.5 16.5h-1M15.5 16.5h-1"/></svg></span><p>직원들은 <b>AI를 활용하여 행정을 혁신</b>하고 있는가?</p></li>
+      <li class="q glass" style="--n:4"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-5 9 5"/><path d="M5 9v9M9.5 9v9M14.5 9v9M19 9v9"/><path d="M3 21h18"/></svg></span><p>우리 대학은 <b>AI 시대를 이끌 대학</b>으로 변화하고 있는가?</p></li>
+    </ol>
+    <div class="answer rv">
+      <small>OUR ANSWER</small>
+      <p>「농협대학교 AX 2030 대전환」을 통해<br><em>농협의 미래 인재</em>를<br>농협대학교가 책임지겠습니다.</p>
+    </div>
+  </section>
+
+  <!-- 4. 인재상 -->
+  <section class="page talent" id="talent" aria-labelledby="t-talent">
+    <h2 id="t-talent" class="rv"><i class="pno">03</i>우리가 키울 인재</h2>
+    <p class="lead rv" style="--d:100ms">범농협에서 일하게 될 인재에게 가장 필요한 능력은<br><b><span class="hl">AI를 활용하여 현장에 적용하는 능력</span>입니다.</b></p>
+    <ol class="steps" id="steps">
+      <li class="st" style="--n:0"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21v-3H6.5A1.5 1.5 0 0 1 5 16.5V14l-2-1 2-3.5A7.5 7.5 0 0 1 12.5 2 7.5 7.5 0 0 1 20 9.5c0 2.4-1.1 4.5-3 5.9V21"/><path d="M9.5 11.5l1.5-4 1.5 4M10 10.3h2M15 7.5v4"/></svg></span><div><b>STEP 1</b><strong>AI 이해</strong><span>AI를 이해하고</span></div></li>
+      <li class="st" style="--n:1"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="13" rx="2"/><path d="M8 21h8M12 16v5"/><path d="M6 12l3-3 3 2 5-5"/></svg></span><div><b>STEP 2</b><strong>AI 활용</strong><span>AI를 활용하여</span></div></li>
+      <li class="st" style="--n:2"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg></span><div><b>STEP 3</b><strong>문제 해결</strong><span>현장의 문제를 정의하고</span></div></li>
+      <li class="st" style="--n:3"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/><path d="M12 12l7-7M16 4h3v3"/></svg></span><div><b>STEP 4</b><strong>가치 창출</strong><span>최적의 해결책으로 가치를 창출합니다</span></div></li>
+    </ol>
+  </section>
+
+  <!-- 5. 기부금 사용처 -->
+  <section class="page use" id="use" aria-labelledby="t-use">
+    <h2 id="t-use" class="rv"><i class="pno">04</i>기부금은 이렇게 사용됩니다</h2>
+    <p class="lead rv" style="--d:100ms">AX 2030 대전환 <b>4대 혁신과제</b>에 쓰입니다.</p>
+    <div class="alloc glass rv" id="alloc">
+      <div class="alloc-head"><span>총 모금 목표</span><b>10<small>억원</small></b></div>
+      <div class="stack" role="img" aria-label="인프라 4억, 교육과정 2억, 산학·실습 2억, 행정시스템 2억">
+        <i style="--c:var(--c-infra);--p:40%;--n:0"></i><i style="--c:var(--c-edu);--p:20%;--n:1"></i><i style="--c:var(--c-lab);--p:20%;--n:2"></i><i style="--c:var(--c-admin);--p:20%;--n:3"></i>
+      </div>
+      <ul class="legend">
+        <li style="--c:var(--c-infra)">인프라 AX<b>4억</b></li>
+        <li style="--c:var(--c-edu)">교육과정 AX<b>2억</b></li>
+        <li style="--c:var(--c-lab)">산학·실습 AX<b>2억</b></li>
+        <li style="--c:var(--c-admin)">행정시스템 AX<b>2억</b></li>
+      </ul>
+    </div>
+    <div class="cards">
+      <article class="card rv" style="--c:var(--c-infra)">
+        <figure><img src="assets/use-infra.jpg" width="548" height="347" loading="lazy" alt="AI 관제 화면이 가득한 강의실에서 학생들이 데이터를 분석하는 모습"><span class="amt">4억원</span></figure>
+        <div class="card-body"><small><i>01</i>인프라AX</small><h3>AI 전용 강의실 구축</h3><p>금융·데이터 분석 및 실습환경 구축</p></div>
+      </article>
+      <article class="card rv" style="--c:var(--c-edu)">
+        <figure><img src="assets/use-edu.jpg" width="945" height="589" loading="lazy" alt="학생이 AI와 함께 노트북으로 데이터를 학습하는 모습"><span class="amt">2억원</span></figure>
+        <div class="card-body"><small><i>02</i>교육과정AX</small><h3>AI 교육커리큘럼 도입</h3><p>교육 과정에 농협실무와 AI를 도입</p></div>
+      </article>
+      <article class="card rv" style="--c:var(--c-lab)">
+        <figure><img src="assets/use-lab.jpg" width="960" height="551" loading="lazy" alt="스마트 온실에서 로봇 팔이 작물을 돌보는 모습"><span class="amt">2억원</span></figure>
+        <div class="card-body"><small><i>03</i>산학 및 실습AX</small><h3>AI 실습 프로젝트 실시</h3><p>실습 현장의 문제를 AI로 연구·해결</p></div>
+      </article>
+      <article class="card rv" style="--c:var(--c-admin)">
+        <figure><img src="assets/use-admin.jpg" width="960" height="542" loading="lazy" alt="AI 학생 행정 포털 화면"><span class="amt">2억원</span></figure>
+        <div class="card-body"><small><i>04</i>행정시스템AX</small><h3>AI 행정시스템 개선</h3><p>학사·학습관리 시스템에 AI 도입</p></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 6. 참여 방법 -->
+  <section class="page give" id="give" aria-labelledby="t-give">
+    <h2 id="t-give" class="rv"><i class="pno">05</i>기부 참여 방법</h2>
+    <div class="acct glass rv" style="--d:100ms">
+      <small>기부금 입금 계좌</small>
+      <span class="bank"><i aria-hidden="true"></i>농협은행</span>
+      <span class="num" id="acctNum">301-0326-0237-51</span>
+      <span class="holder">예금주 <b>농협대학교</b></span>
+      <button class="copy" type="button" id="copyAcct"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>계좌번호 복사</button>
+    </div>
+    <div class="rv" style="--d:160ms">
+      <p class="or">자세한 기부안내</p>
+      <a class="cta" href="https://m.site.naver.com/2itY8" target="_blank" rel="noopener">기부안내 바로가기
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="qr glass" href="https://m.site.naver.com/2itY8" target="_blank" rel="noopener">
+        <img src="assets/qr.png" width="92" height="92" alt="농협대학교 기부안내 페이지로 연결되는 QR코드">
+        <p><b>QR 스캔 › 기부안내</b>휴대폰 카메라로 비추거나 눌러서 농협대학교 기부안내 페이지를 확인하세요.</p>
+      </a>
+      <div class="pair">
+        <a class="btn" href="tel:031-960-4152"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>전화 문의</a>
+        <button class="btn" type="button" id="shareBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>널리 알리기</button>
+      </div>
+      <p class="closing">범농협 차원에서 기금모금에<br>적극 참여를 부탁드립니다.</p>
+      <p class="contact">기부안내 농협대학교 기획조정실 <a href="tel:031-960-4152">031-960-4152</a></p>
+      <p class="sign"><img src="assets/emblem.png" alt="" width="30" height="30">농협대학교</p>
+    </div>
+  </section>
+
+</div>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+<button class="music" type="button" id="musicBtn" aria-pressed="false" aria-label="배경음악 켜기"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span id="musicLabel">MUSIC</span></button>
+<div class="tip" id="tip">♪ 화면을 누르면 배경음악이 흘러나옵니다</div>
+<audio id="bgm" src="assets/bgm.mp3" loop preload="none"></audio>
+<a class="scroll-cue" id="cue" href="#film">아래로 넘겨 보세요<span class="chev" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span></a>
+<nav class="fab" id="fab" aria-label="빠른 메뉴">
+  <a class="fab-btn fab-give" href="#give" aria-label="기부 참여 방법으로 이동">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg>기부</a>
+  <button class="fab-btn fab-share" type="button" id="fabShare" aria-label="이 페이지 공유하기">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>공유</button>
+</nav>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" hidden>
+  <div class="sheet-bg" data-close></div>
+  <div class="sheet-panel">
+    <div class="sheet-grip" aria-hidden="true"></div>
+    <div class="sheet-head"><h3 id="sheetTitle">기금모금 알리기</h3><button class="sheet-x" type="button" data-close aria-label="닫기">×</button></div>
+    <div class="sheet-card"><img src="assets/og.jpg" alt="" width="88" height="46"><div><b>「AX2030 대전환 혁신사업」 추진 기금모금</b><span id="shareUrl"></span></div></div>
+    <div class="share-grid">
+      <button class="sb" type="button" id="shKakao"><span class="ic" style="--bgc:#FEE500;--fgc:#1A1600"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.8 1.9 5.3 4.7 6.7l-1 3.6c-.1.3.3.6.6.4l4.2-2.8c.5.1 1 .1 1.5.1 5.5 0 10-3.6 10-8S17.5 3 12 3z"/></svg></span>카카오톡</button>
+      <a class="sb" id="shSms" href="#"><span class="ic" style="--bgc:#2FB959"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>문자</a>
+      <a class="sb" id="shBand" href="#" target="_blank" rel="noopener"><span class="ic" style="--bgc:#1EC264"><svg viewBox="0 0 24 24" aria-hidden="true"><text x="12" y="18" text-anchor="middle" font-size="17" font-weight="900" fill="#fff" font-family="Arial, sans-serif">b</text></svg></span>밴드</a>
+      <a class="sb" id="shMail" href="#"><span class="ic" style="--bgc:#56597A"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></span>이메일</a>
+      <button class="sb" type="button" id="shCopy"><span class="ic" style="--bgc:#2F7BFF"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></span>링크 복사</button>
+      <button class="sb" type="button" id="shMore" hidden><span class="ic" style="--bgc:rgba(255,255,255,.14)"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg></span>다른 앱</button>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* 모금 현황: 집계가 나오면 RAISED에 원 단위 금액을 넣으면 표지에 진행 막대가 나타남 */
+  var GOAL = 1000000000;
+  var RAISED = null;   // 예: 352000000
+  var ACCOUNT = '농협은행 301-0326-0237-51 (예금주 농협대학교)';
+
+  /* 글자 단위 쪼개기 (단어는 줄바꿈 단위로 유지) */
+  function split(el) {
+    var sr = document.createElement('span');
+    sr.className = 'sr';
+    sr.textContent = el.textContent.replace(/\s+/g, ' ').trim();
+    var i = 0;
+    (function walk(node) {
+      Array.prototype.slice.call(node.childNodes).forEach(function (n) {
+        if (n.nodeType === 3) {
+          var frag = document.createDocumentFragment();
+          n.textContent.split(/(\s+)/).forEach(function (part) {
+            if (!part) return;
+            if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(' ')); return; }
+            var w = document.createElement('span');
+            w.className = 'w';
+            w.setAttribute('aria-hidden', 'true');
+            Array.from(part).forEach(function (ch) {
+              var c = document.createElement('span');
+              c.className = 'c';
+              c.style.setProperty('--i', i++);
+              c.textContent = ch;
+              w.appendChild(c);
+            });
+            frag.appendChild(w);
+          });
+          n.parentNode.replaceChild(frag, n);
+        } else if (n.nodeType === 1 && n.tagName !== 'BR') {
+          walk(n);
+        }
+      });
+    })(el);
+    el.insertBefore(sr, el.firstChild);
+  }
+  document.querySelectorAll('[data-split]').forEach(split);
+
+  /* 화면에 들어오면 등장 */
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.16, rootMargin: '0px 0px -6% 0px' }) : null;
+  function watch(el) { if (io) io.observe(el); else el.classList.add('in'); }
+
+  /* 목표 금액 숫자 올리기 + 모금 현황 */
+  function countUp() {
+    var el = $('goalNum'), t0 = null, dur = reduce ? 1 : 1400;
+    function step(t) {
+      if (t0 === null) t0 = t;
+      var k = Math.min(1, (t - t0) / dur);
+      el.textContent = Math.round(10 * (1 - Math.pow(1 - k, 3)));
+      if (k < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+    if (typeof RAISED === 'number') {
+      var pct = Math.min(100, RAISED / GOAL * 100);
+      $('goalProgress').hidden = false;
+      $('goalRaised').textContent = (RAISED / 1e8).toFixed(RAISED % 1e7 ? 2 : 1).replace(/\.?0+$/, '') + '억원';
+      $('goalPct').textContent = pct.toFixed(1) + '%';
+      setTimeout(function () { $('goalBar').style.width = pct + '%'; }, 50);
+    }
+  }
+
+  /* 인트로 → 표지 등장 */
+  var intro = $('intro'), hero = $('hero'), isReady = false;
+  function ready() {
+    if (isReady) return;
+    isReady = true;
+    hero.classList.add('in');
+    $('fab').classList.add('show');
+    if (intro && intro.parentNode) intro.parentNode.removeChild(intro);
+    setTimeout(function () { if (!cueDone) cue.classList.add('show'); }, reduce ? 0 : 1600);
+    setTimeout(function () { if (bgm.paused && !started) tip.classList.add('show'); }, 1800);
+    setTimeout(function () { tip.classList.remove('show'); }, 8000);
+  }
+  /* 아래로 넘기기 안내: 한 번이라도 내리면 다시 띄우지 않음 */
+  var cue = $('cue'), cueDone = false;
+  function hideCue() { cueDone = true; cue.classList.remove('show'); }
+  cue.addEventListener('click', hideCue);
+  if (reduce) { ready(); countUp(); }
+  else {
+    setTimeout(function () { hero.classList.add('in'); }, 1900);
+    setTimeout(countUp, 3000);
+    setTimeout(ready, 2850);
+    intro.addEventListener('click', ready);
+  }
+
+  /* 표지 배경: 데이터 네트워크 */
+  (function net() {
+    var cv = $('net'), cx = cv.getContext('2d'), W, H, pts = [], run = false, raf;
+    function size() {
+      var dpr = Math.min(2, window.devicePixelRatio || 1);
+      W = cv.clientWidth; H = cv.clientHeight;
+      cv.width = W * dpr; cv.height = H * dpr;
+      cx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var n = Math.round(Math.max(28, Math.min(64, W * H / 9500)));
+      pts = [];
+      for (var i = 0; i < n; i++) pts.push({ x: Math.random() * W, y: Math.random() * H * 0.85, vx: (Math.random() - .5) * .28, vy: (Math.random() - .5) * .22, r: Math.random() * 1.4 + .6, t: Math.random() * 6.28, v: Math.random() < .7 });
+    }
+    function draw() {
+      cx.clearRect(0, 0, W, H);
+      var i, j, a, b, dx, dy, d, max = 104;
+      for (i = 0; i < pts.length; i++) {
+        a = pts[i];
+        if (!reduce) { a.x += a.vx; a.y += a.vy; a.t += .03; }
+        if (a.x < -10) a.x = W + 10; if (a.x > W + 10) a.x = -10;
+        if (a.y < -10) a.y = H * .85; if (a.y > H * .9) a.y = -10;
+      }
+      for (i = 0; i < pts.length; i++) {
+        a = pts[i];
+        for (j = i + 1; j < pts.length; j++) {
+          b = pts[j]; dx = a.x - b.x; dy = a.y - b.y; d = dx * dx + dy * dy;
+          if (d < max * max) {
+            d = Math.sqrt(d);
+            cx.strokeStyle = (a.v ? 'rgba(92,200,255,' : 'rgba(242,196,109,') + ((1 - d / max) * .3).toFixed(3) + ')';
+            cx.lineWidth = .7;
+            cx.beginPath(); cx.moveTo(a.x, a.y); cx.lineTo(b.x, b.y); cx.stroke();
+          }
+        }
+      }
+      for (i = 0; i < pts.length; i++) {
+        a = pts[i];
+        var tw = .55 + Math.sin(a.t) * .45;
+        cx.fillStyle = a.v ? 'rgba(92,200,255,' + (.12 * tw) + ')' : 'rgba(242,196,109,' + (.12 * tw) + ')';
+        cx.beginPath(); cx.arc(a.x, a.y, a.r * 4, 0, 6.283); cx.fill();
+        cx.fillStyle = a.v ? 'rgba(210,240,255,' + (.5 + .5 * tw) + ')' : 'rgba(255,235,190,' + (.5 + .5 * tw) + ')';
+        cx.beginPath(); cx.arc(a.x, a.y, a.r, 0, 6.283); cx.fill();
+      }
+      if (run && !reduce) raf = requestAnimationFrame(draw);
+    }
+    function setRun(v) { if (v === run) return; run = v; if (run) { cancelAnimationFrame(raf); raf = requestAnimationFrame(draw); } }
+    size(); draw();
+    window.addEventListener('resize', function () { size(); if (!run) draw(); });
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { setRun(es[0].isIntersecting && !document.hidden); }).observe(hero);
+    else setRun(true);
+    document.addEventListener('visibilitychange', function () { if (document.hidden) setRun(false); else if (hero.getBoundingClientRect().bottom > 0) setRun(true); });
+  })();
+
+  /* 배경음악: 첫 터치에 시작, 버튼으로 켜고 끔, 영상 재생 중 멈춤 */
+  var bgm = $('bgm'), mBtn = $('musicBtn'), tip = $('tip'), player = $('player'), ytp = null;
+  var userOff = false, started = false, filmOn = false, resumeAfterFilm = false, resumeAfterHide = false;
+  bgm.volume = 0.5;
+  function setUI(on) {
+    mBtn.classList.toggle('on', on);
+    mBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    mBtn.setAttribute('aria-label', on ? '배경음악 끄기' : '배경음악 켜기');
+    $('musicLabel').textContent = on ? 'ON' : 'MUSIC';
+  }
+  function play() { var p = bgm.play(); if (p && p.catch) p.catch(function () { setUI(false); }); }
+  bgm.addEventListener('play', function () { setUI(true); tip.classList.remove('show'); });
+  bgm.addEventListener('pause', function () { setUI(false); });
+  mBtn.addEventListener('click', function () {
+    started = true;
+    tip.classList.remove('show');
+    if (bgm.paused) {
+      userOff = false;
+      if (filmOn && ytp && ytp.pauseVideo) ytp.pauseVideo();
+      play();
+    } else { userOff = true; bgm.pause(); }
+  });
+  function firstTouch(e) {
+    if (started || mBtn.contains(e.target) || player.contains(e.target)) return;
+    started = true;
+    ['pointerup', 'touchend', 'keydown'].forEach(function (ev) { document.removeEventListener(ev, firstTouch, true); });
+    if (!userOff && !filmOn) play();
+  }
+  ['pointerup', 'touchend', 'keydown'].forEach(function (ev) { document.addEventListener(ev, firstTouch, true); });
+  function filmStart() { filmOn = true; if (!bgm.paused) { resumeAfterFilm = true; bgm.pause(); } }
+  function filmStop() { filmOn = false; if (resumeAfterFilm && !userOff) play(); resumeAfterFilm = false; }
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden && !bgm.paused) { bgm.pause(); resumeAfterHide = true; }
+    else if (!document.hidden && resumeAfterHide) { resumeAfterHide = false; if (!userOff && !filmOn) play(); }
+  });
+
+  /* 영상: 재생 버튼을 누를 때만 유튜브 플레이어를 불러와 그 자리에서 재생.
+     유튜브 재생 신호(iframe_api)를 받아 배경음악을 멈추고 이어 줌 */
+  var YT_ID = 'a8Y0kT52tLk';
+  function watchYT(f) {
+    function attach() {
+      ytp = new YT.Player(f, { events: { onStateChange: function (e) {
+        if (e.data === YT.PlayerState.PLAYING) filmStart();
+        else if (e.data === YT.PlayerState.PAUSED || e.data === YT.PlayerState.ENDED) filmStop();
+      } } });
+    }
+    if (window.YT && YT.Player) return attach();
+    var prev = window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady = function () { if (prev) prev(); attach(); };
+    var s = document.createElement('script');
+    s.src = 'https://www.youtube.com/iframe_api';
+    document.head.appendChild(s);
+  }
+  $('playBtn').addEventListener('click', function () {
+    if (player.classList.contains('playing')) return;
+    filmStart();
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + YT_ID + '?autoplay=1&playsinline=1&rel=0&modestbranding=1&enablejsapi=1&origin=' + encodeURIComponent(location.origin);
+    f.title = 'AX2030 기부 영상';
+    f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.allowFullscreen = true;
+    f.referrerPolicy = 'strict-origin-when-cross-origin';
+    player.insertBefore(f, player.firstChild);
+    player.classList.add('playing');
+    watchYT(f);
+  });
+
+  /* 위쪽 진행 막대 */
+  var prog = $('progress'), ticking = false;
+  function update() {
+    ticking = false;
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    prog.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, window.scrollY / max) : 0) + ')';
+    if (!cueDone && window.scrollY > 60) hideCue();
+  }
+  function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+
+  /* 참여 방법 쪽에서는 따라다니는 버튼을 숨김: 같은 버튼이 화면 안에 있음 */
+  if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { $('fab').classList.toggle('away', es[0].isIntersecting); }, { threshold: 0.25 }).observe($('give'));
+
+  document.querySelectorAll('.rv, #qs, #steps').forEach(watch);
+
+  /* 토스트 · 복사 · 공유 */
+  var toastTimer;
+  function toast(msg) { var t = $('toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(function () { t.classList.remove('show'); }, msg.length > 20 ? 3200 : 2000); }
+  function copyText(text, done) {
+    function fallback() {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); toast(done); } catch (e) { toast(text); }
+      document.body.removeChild(ta);
+    }
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(function () { toast(done); }, fallback);
+    else fallback();
+  }
+  $('copyAcct').addEventListener('click', function () { copyText(ACCOUNT, '계좌번호를 복사했습니다'); });
+
+  /* 공유 창: 카카오톡·문자·밴드·이메일·링크 복사·다른 앱 */
+  var SHARE_URL = location.origin + location.pathname;
+  var SHARE_TITLE = '「AX2030 대전환 혁신사업」 추진 기금모금';
+  var SHARE_TEXT = '농협의 미래 인재를 농협대학교가 책임지겠습니다. 함께해 주세요.';
+  var MSG = SHARE_TITLE + '\n' + SHARE_TEXT + '\n' + SHARE_URL;
+  var enc = encodeURIComponent;
+  var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var canShare = typeof navigator.share === 'function';
+  $('shareUrl').textContent = SHARE_URL.replace(/^https?:\/\//, '');
+  $('shSms').href = 'sms:' + (isIOS ? '&' : '?') + 'body=' + enc(MSG);
+  $('shBand').href = 'https://band.us/plugin/share?body=' + enc(MSG) + '&route=' + enc(location.host);
+  $('shMail').href = 'mailto:?subject=' + enc(SHARE_TITLE) + '&body=' + enc(MSG);
+  $('shMore').hidden = !canShare;
+  function nativeShare() { return navigator.share({ title: SHARE_TITLE, text: SHARE_TITLE + '\n' + SHARE_TEXT, url: SHARE_URL }).catch(function () {}); }
+  // 카카오톡: 휴대폰 공유창(목록에 카카오톡 표시)을 열고, 지원하지 않는 환경이면 안내 문구를 복사
+  $('shKakao').addEventListener('click', function () {
+    if (canShare) nativeShare();
+    else copyText(MSG, '안내 문구를 복사했습니다. 카카오톡 대화방에 붙여넣어 주세요');
+  });
+  $('shCopy').addEventListener('click', function () { copyText(SHARE_URL, '페이지 링크를 복사했습니다'); });
+  $('shMore').addEventListener('click', nativeShare);
+
+  var sheet = $('sheet'), lastFocus = null, closeTimer;
+  function openSheet() {
+    clearTimeout(closeTimer);
+    lastFocus = document.activeElement;
+    sheet.hidden = false;
+    document.body.style.overflow = 'hidden';
+    requestAnimationFrame(function () { requestAnimationFrame(function () { sheet.classList.add('show'); }); });
+    setTimeout(function () { $('shKakao').focus(); }, 60);
+  }
+  function closeSheet() {
+    sheet.classList.remove('show');
+    document.body.style.overflow = '';
+    closeTimer = setTimeout(function () { sheet.hidden = true; }, 450);
+    if (lastFocus) lastFocus.focus();
+  }
+  sheet.addEventListener('click', function (e) { if (e.target.closest('[data-close]')) closeSheet(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !sheet.hidden) closeSheet(); });
+  $('shareBtn').addEventListener('click', openSheet);
+  $('fabShare').addEventListener('click', openSheet);
+})();
+</script>
+</body>
+</html>
